@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="viewBox">
+  <defs>
+    <linearGradient id="my-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF0000" />  
+      <stop offset="14%" stop-color="#FF7F00" />  
+      <stop offset="28%" stop-color="#FFFF00" />  
+      <stop offset="42%" stop-color="#00FF00" />  
+      <stop offset="56%" stop-color="#0000FF" />  
+      <stop offset="70%" stop-color="#4B0082" />  
+      <stop offset="84%" stop-color="#9400D3" />   
+      <stop offset="100%" stop-color="#0099ff" />  
+  </linearGradient>
+    <filter id="coloredTrail" x="-50%" y="-10%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur" />
+      <feFlood flood-color="red" result="flood" />
+      <feComposite in="flood" in2="blur" operator="in" result="redBlur" />
+      <feMerge>
+        <feMergeNode in="redBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g class="paths">
+    <path *ngFor="let path of paths" [attr.d]="path.d" class="base-path"></path>
+  </g>
+  <g class="paths" filter="url(#coloredTrail)">
+    <ng-container *ngFor="let path of paths">
+      <path
+        *ngIf="path.highlight"
+        [attr.d]="path.d"
+        [style.animation-delay]="path.delay + 'ms'"
+        [style.--animation-duration]="path.speed + 's'"
+        class="base-path highlighted-path"
+      ></path>
+    </ng-container>
+  </g>
+</svg>

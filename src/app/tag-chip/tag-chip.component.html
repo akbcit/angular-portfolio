@@ -1,0 +1,4 @@
+<button mat-button class="tag-chip" (click)="onTagClicked()">
+    {{ tag }}
+    <span class="badge-text" (click)="onBadgeClicked($event)" *ngIf="isSelected">x</span>
+</button>

@@ -1,0 +1,12 @@
+<!-- This div is the container that will move based on sliderPosition -->
+<div id="slider-container"  (mouseenter)="pauseSliderMovement()"
+(mouseleave)="resumeSliderMovement()">
+  <div id="skills-slider" #skillsSlider [style.transform]="'translateX(' + sliderPosition + 'px)'">
+    <!-- These are the individual items that will be displayed within the moving container -->
+    <div *ngFor="let item of quadrupledArr; let index = index" class="slide skillBadge">
+      <img [src]="item.logoSrc" [alt]="item.skillName + '-logo'" class="skill-logo" />
+      <p class="skill-name">{{ item.skillName }}</p>
+    </div>
+  </div>
+</div>
+

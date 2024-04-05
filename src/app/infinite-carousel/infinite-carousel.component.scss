@@ -1,0 +1,33 @@
+#slider-container{
+	overflow: hidden;
+	white-space: nowrap;
+	#skills-slider {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		white-space: nowrap;
+		transition: transform 1s linear;
+	  
+		.skillBadge {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+		  flex: 0 0 auto; // Keeps the item's size fixed
+		  z-index: -1;
+	  
+		  .skill-logo {
+			height: 50px;
+			margin: 0;
+		  }
+	  
+		  .skill-name {
+			margin: 0;
+			text-align: center;
+			font-weight: 500;
+			color: rgb(83, 115, 154);
+		  }
+		}
+	  }
+}

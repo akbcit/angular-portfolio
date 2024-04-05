@@ -1,0 +1,36 @@
+@import "../../src/variables";
+
+:host {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    max-width: 100vw;
+}
+
+#menu-stripe {
+    border-top: 2px solid #196ee6;
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    width: 100vw;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+
+    #app-content-container {
+        width: 100%;
+        z-index: 1;
+        margin-top: calc($header-top-gap + $site-logo-height + $main-content-top-gap + 2rem);
+        margin-bottom: 2rem;
+    }
+}

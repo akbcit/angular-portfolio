@@ -1,0 +1,40 @@
+<div class="outer-box" [ngClass]="{'full-size': isFiltered}" [style.background-image]="backgroundImage">
+  <div class="inner-box">
+    <div class="project-thumbnail" [ngClass]="{'detail-view': isFiltered}"
+      [style.background-image]="'url(' + thumbUrl + ')'">
+      <div *ngIf="isFiltered" class="details-drawer" [ngClass]="{'opened': drawerOpen, 'closed': !drawerOpen}">
+        <mat-icon (click)="toggleDrawer()" class="control-icon"
+          [ngClass]="{'expand': drawerOpen, 'contract': !drawerOpen}">expand_more</mat-icon>
+        <div class="project-details">
+          <div class="project-description">{{project.description}}</div>
+          <div class="complete-project-details"
+            [ngClass]="{'complete-shown': drawerOpen, 'complete-hidden': !drawerOpen}">
+            <ul class="other-details">
+              <li class="project-description-long">{{project.descriptionLong}}</li>
+              <li class="project-roadmap">Roadmap: {{project.roadmap}}</li>
+            </ul>
+            <div class="project-features">
+              <div *ngFor="let feature of project.features" class="feature">{{ feature }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="project-title">{{project.projectName}}</span>
+    <div class="tags-and-controls">
+      <div class="tags-container">
+        <p *ngFor="let tag of project.tags" class="project-tag">{{tag}}</p>
+      </div>
+      <div class="controls-container">
+        <div class="icon-wrapper">
+          <i class="fab fa-github control-icon"></i>
+        </div>
+        <div class="icon-wrapper">
+          <mat-icon class="control-icon" (click)="requestFilter(project.projectName)"
+            *ngIf="!isFiltered">zoom_out_map</mat-icon>
+          <mat-icon class="control-icon" (click)="removeFilter()" *ngIf="isFiltered">zoom_in_map</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

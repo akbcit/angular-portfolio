@@ -1,0 +1,39 @@
+@import "../../../src/variables";
+@import "../../../src/theme";
+
+#page-footer {
+    border-top: 2px solid $separator-color;
+    background-color: $footer-bg-color;
+    padding: 2rem;
+    .container{
+        #footer-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:0.7rem;
+            #footer-logo{
+                height: calc($site-logo-height * 1.5);
+                margin: 1rem;
+            }
+            #footer-text{
+                font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Inter, Arial, "Noto Sans", sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #footer-socials{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 0.5rem;
+                gap:0.5rem;
+
+                .socials-logo{
+                    height: calc($site-logo-height * 1.1);
+                }
+            }
+        }
+    }
+}

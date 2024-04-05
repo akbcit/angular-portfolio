@@ -1,0 +1,31 @@
+<div id="site-header">
+    <div class="container">
+        <div id="header-container" appScrollAdjustHeader>
+            <div id="logo-and-title">
+                <img src="../../assets/images/logo_blue.svg" alt="site logo" id="site-logo" />
+                <h3 id="site-title" *ngIf="!isMobile">ADITYA KUMAR</h3>
+            </div>
+            <nav id="site-nav" *ngIf="!isMobile">
+                <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                    class="nav-link">Home</a>
+                <span aria-hidden="true">/</span>
+                <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                    class="nav-link">About</a>
+                <span aria-hidden="true">/</span>
+                <a routerLink="/projects" routerLinkActive="active-link" class="nav-link">Projects</a>
+                <span aria-hidden="true">/</span>
+                <a routerLink="/blog" routerLinkActive="active-link" class="nav-link">Blog</a>
+            </nav>
+            <button matRipple id="ham-menu-btn" (click)="toggleMenu()" aria-label="icon-button with a menu" *ngIf="isMobile">
+                <mat-icon *ngIf="!menuOpen">menu</mat-icon>
+                <mat-icon *ngIf="menuOpen">close</mat-icon>
+            </button>
+            <!-- <div class="custom-menu" *ngIf="menuOpen" id="custom-menu">
+                <a (click)="toggleMenu()" routerLink="/" routerLinkActive="active-link">Home</a>
+                <a (click)="toggleMenu()" routerLink="/about" routerLinkActive="active-link">About</a>
+                <a (click)="toggleMenu()" routerLink="/projects" routerLinkActive="active-link">Projects</a>
+                <a (click)="toggleMenu()" routerLink="/blog" routerLinkActive="active-link">Blog</a>
+            </div> -->
+        </div>
+    </div>
+</div>

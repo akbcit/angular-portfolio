@@ -1,0 +1,34 @@
+.tag-chip {
+    position: relative; // Necessary for absolute positioning of children
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Inter, Arial, "Noto Sans", sans-serif;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-image: linear-gradient(to right, #ff7e5f, #feb47b) 3 stretch;
+  
+    &:active {
+      transform: scale(0.95); // Optional: Scale button on active for a tactile feedback
+    }
+  
+    .badge-text {
+      position: absolute;
+      top: -15px;  
+      right: -15px;  
+      background-color: red;  
+      color: white;  
+      width: 15px;  
+      height: 15px;  
+      font-size: 10px;  
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;  
+      padding: 0;  
+      line-height: 1; 
+      cursor: pointer;  
+  
+      &:hover {
+        background-color: darken(red, 10%);  
+      }
+    }
+  }
+  

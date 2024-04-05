@@ -1,0 +1,44 @@
+@import "../../../src/variables";
+@import "../../../src/theme";
+
+:host{
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    z-index: 1;  
+    margin: 0;  
+    padding: 0;  
+    border-radius: 10px;
+    border: 3px solid $separator-color;
+    display: block;
+}
+
+.base-path {
+    z-index: 0;  
+    fill: none;
+    stroke: rgba(0, 153, 255, 0.1); // Subtle color for the path
+    stroke-width: 0.3; // Consistent stroke width
+}
+
+.highlighted-path {
+    fill: none; // Ensure the fill is not overridden
+    stroke-dasharray: 7, 1000; // A small "beam" followed by a long gap
+    stroke-dashoffset: 0;
+    animation: lightstream var(--animation-duration, 7s) infinite linear; 
+    animation-delay: var(--animation-delay);
+    stroke: url(#my-gradient); // Bright color for the meteor
+    stroke-width: 0.8; // Matches the base path to maintain consistency
+    opacity: 1; // Fully visible
+    z-index: 0;  
+}
+
+@keyframes lightstream {
+    from {
+        stroke-dashoffset: 1000; // Starts the beam off the visible path
+    }
+    to {
+        stroke-dashoffset: -15; // Moves the beam along the path
+    }
+}

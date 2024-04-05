@@ -1,0 +1,13 @@
+<app-projects-container></app-projects-container>
+<div id="tags-container">
+     <app-tag-chip *ngFor="let tag of tags" [tag]="tag" 
+        (click)="selectTag(tag)" 
+        (removeFilter)="selectTag(null)">
+    </app-tag-chip>
+</div>
+<div id="projects-container">
+     <app-project-box *ngFor="let project of filteredProjects" [project]="project" 
+        (filterRequested)="selectName($event)" 
+        (removeFilterRequest)="selectName(null)">
+    </app-project-box>
+</div>
