@@ -98,7 +98,7 @@ body {
     height: 100%;
 
     @media (min-width: 1280px) {
-        padding: 0 max(20px, calc((100vw - 1480px) / 2));
+        padding: 0 max(20px, calc((100vw - 1280px) / 2));
     }
 
     // Remove left and right padding for screens narrower than 430px

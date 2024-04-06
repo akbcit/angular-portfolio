@@ -1,0 +1,36 @@
+.blog-post {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #38d9a9;
+  
+    &-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    &-date {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    &-summary {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    &-link {
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 600;
+      color:  #408fff;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  

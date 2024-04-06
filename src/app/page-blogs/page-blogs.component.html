@@ -1,0 +1,16 @@
+<app-svg-container></app-svg-container>
+<div id="blogs-container">
+    <h1 id="page-title">Blog</h1>
+    <mat-divider class="main-divider"></mat-divider>
+    <mat-divider class="main-divider"></mat-divider>
+    <h3 class="page-blog-desc-para">Welcome to my web development blog, where I not only share my favorite libraries,
+        insightful web development tips, and cool projects, but also delve into my thoughts, opinions, and the
+        challenges I've encountered along the way. The goal is to document my journey, ensuring I don’t forget the
+        valuable lessons learned along the way. 😊</h3>
+    <h3 class="page-blog-desc-para">If you have copyright claims, mail me and I'll take it down. If you think I'm wrong
+        about something, mail me, as I'd love to learn and discuss. Thanks for hanging around. You're cool.</h3>
+    <mat-divider class="secondary-divider"></mat-divider>
+    <div id="blogs-grid">
+        <app-blog-card *ngFor="let post of blogPosts" [blogPost]="post"></app-blog-card>
+    </div>
+</div>

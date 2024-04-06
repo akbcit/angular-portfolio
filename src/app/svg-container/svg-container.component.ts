@@ -2,13 +2,13 @@ import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-about-container',
+  selector: 'app-svg-container',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './about-container.component.html',
-  styleUrls: ['./about-container.component.scss']
+  templateUrl: './svg-container.component.html',
+  styleUrls: ['./svg-container.component.scss']
 })
-export class AboutContainerComponent implements OnInit {
+export class SvgContainerComponent implements OnInit {
   viewBox: string = '0 0 1440 800';  
   width!: number;
   height!: number;

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { AboutContainerComponent } from '../about-container/about-container.component';
+import { SvgContainerComponent } from '../svg-container/svg-container.component';
 
 @Component({
   selector: 'app-page-about',
   standalone: true,
-  imports: [AboutContainerComponent],
+  imports: [SvgContainerComponent],
   templateUrl: './page-about.component.html',
   styleUrl: './page-about.component.scss'
 })
