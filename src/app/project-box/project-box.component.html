@@ -20,21 +20,24 @@
         </div>
       </div>
     </div>
-    <span class="project-title">{{project.projectName}}</span>
+    <span class="project-title" [ngClass]="{'increase-margin': isFiltered}">{{project.projectName}}</span>
     <div class="tags-and-controls">
       <div class="tags-container">
-        <p *ngFor="let tag of project.tags" class="project-tag">{{tag}}</p>
+        <p *ngFor="let tag of project.tags" class="project-tag" [ngClass]="{'large-size': isFiltered}">{{tag}}</p>
       </div>
       <div class="controls-container">
-        <div class="icon-wrapper">
+        <div class="icon-wrapper" *ngIf="project.gitLink">
           <a [href]="project.gitLink" class="control-link" target="_blank">
-            <i class="fab fa-github control-icon"></i>
+            <i class="fab fa-github control-icon" matTooltip="Project Repo"></i>
           </a>
         </div>
+        <div class="icon-wrapper" *ngIf="project.videoLink">
+          <mat-icon class="control-icon demo-icon" (click)="openVideoLink(project.videoLink)"  matTooltip="Project Demo">play_circle_filled</mat-icon>
+        </div>
         <div class="icon-wrapper">
-          <mat-icon class="control-icon" (click)="requestFilter(project.projectName)"
+          <mat-icon class="control-icon" matTooltip="Expand" (click)="requestFilter(project.projectName); updateThumbUrl();"
             *ngIf="!isFiltered">zoom_out_map</mat-icon>
-          <mat-icon class="control-icon" (click)="removeFilter()" *ngIf="isFiltered">zoom_in_map</mat-icon>
+          <mat-icon class="control-icon" (click)="removeFilter() ; updateThumbUrl();" *ngIf="isFiltered" matTooltip="Contract">zoom_in_map</mat-icon>
         </div>
       </div>
     </div>

@@ -10,4 +10,5 @@ export interface Project {
     roadmap?:string;
     description?:string,
     descriptionLong?:string, 
+    videoLink?:string,
   }

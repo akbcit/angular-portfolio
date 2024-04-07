@@ -13,4 +13,11 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'angular-portfolio';
+  ngOnInit():void{
+    document.body.addEventListener('touchmove', function (e) {
+      if (document.body.classList.contains('no-scroll')) {
+        e.preventDefault();
+      }
+    }, { passive: false }); 
+  }
 }

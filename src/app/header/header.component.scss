@@ -93,4 +93,38 @@
     border: none;
     color: white;
     border-radius: 50%;
+    z-index: 11;
+    font-size: 2rem;
+}
+
+.custom-menu {
+    position: fixed; // Makes the menu overlay the content
+    top: 0;
+    left: 0;
+    width: 100vw; // Full viewport width
+    height: 100vh; // Full viewport height
+    background-color: rgba(0, 0, 0, 0.9); // Semi-transparent black background
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centers items vertically
+    align-items: center; // Centers items horizontally
+    gap: 20px; // Adjusts the space between menu items
+    z-index: 10; // Ensures the menu is above other content
+
+    a {
+        font-size: 1.5rem; // Larger font size for better readability
+        color: white; // White text color
+        text-decoration: none;
+        padding: 10px 20px; // Padding for better touch targets
+        border-radius: 5px; // Optional: rounds the corners of the link backgrounds on hover
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2); // Adds a hover effect to menu items
+        }
+
+        &.active-link {
+            background-color: #0275d8; // Highlight for the currently active link
+            color: white;
+        }
+    }
 }

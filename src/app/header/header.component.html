@@ -2,8 +2,9 @@
     <div class="container">
         <div id="header-container" appScrollAdjustHeader>
             <div id="logo-and-title">
-                <img src="../../assets/images/logo_blue.svg" alt="site logo" id="site-logo" />
-                <h3 id="site-title" *ngIf="!isMobile">ADITYA KUMAR</h3>
+                <a href="/">
+                    <img src="../../assets/images/logo_blue.svg" alt="site logo" id="site-logo" />
+                </a>
             </div>
             <nav id="site-nav" *ngIf="!isMobile">
                 <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
@@ -20,12 +21,12 @@
                 <mat-icon *ngIf="!menuOpen">menu</mat-icon>
                 <mat-icon *ngIf="menuOpen">close</mat-icon>
             </button>
-            <!-- <div class="custom-menu" *ngIf="menuOpen" id="custom-menu">
-                <a (click)="toggleMenu()" routerLink="/" routerLinkActive="active-link">Home</a>
-                <a (click)="toggleMenu()" routerLink="/about" routerLinkActive="active-link">About</a>
-                <a (click)="toggleMenu()" routerLink="/projects" routerLinkActive="active-link">Projects</a>
-                <a (click)="toggleMenu()" routerLink="/blog" routerLinkActive="active-link">Blog</a>
-            </div> -->
+            <div class="custom-menu" *ngIf="menuOpen" id="custom-menu">
+                <a (click)="toggleMenu()" routerLink="/" routerLinkActive="active-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                <a (click)="toggleMenu()" routerLink="/about" routerLinkActive="active-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">About</a>
+                <a (click)="toggleMenu()" routerLink="/projects" routerLinkActive="active-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Projects</a>
+                <a (click)="toggleMenu()" routerLink="/blog" routerLinkActive="active-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Blog</a>
+            </div>
         </div>
     </div>
 </div>

@@ -2,11 +2,12 @@ import { Component, EventEmitter, HostListener, Input, Output } from '@angular/c
 import { CommonModule } from '@angular/common';
 import { Project } from '../models/project.model';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-project-box',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, MatTooltipModule],
   templateUrl: './project-box.component.html',
   styleUrl: './project-box.component.scss'
 })
@@ -36,8 +37,8 @@ export class ProjectBoxComponent {
   selectedGradients: string[] = [];
   backgroundImage!: string;
   isFiltered: boolean = false;
-  thumbUrl!:string;
-  drawerOpen:boolean = false;
+  thumbUrl!: string;
+  drawerOpen: boolean = false;
 
   ngOnInit(): void {
     this.updateThumbUrl();
@@ -49,6 +50,7 @@ export class ProjectBoxComponent {
       }
     }
     this.backgroundImage = this.selectedGradients.join(",");
+    console.log(this.project.videoLink);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -59,23 +61,23 @@ export class ProjectBoxComponent {
   updateThumbUrl() {
     // Logic to dynamically update thumburl based on screen size / isFiltered
     const screenWidth = window.innerWidth;
-    if(this.isFiltered){
-      if(screenWidth< 800){
+    if (this.isFiltered) {
+      if (screenWidth < 800) {
         this.thumbUrl = this.project.thumbUrlSmall;
       }
-      else if(screenWidth >= 800 && screenWidth < 1300){
+      else if (screenWidth >= 800 && screenWidth < 1300) {
         this.thumbUrl = this.project.thumbUrlMedium;
       }
-      else{
+      else {
         this.thumbUrl = this.project.thumbUrlLarge;
       }
     }
-    else{
+    else {
       this.thumbUrl = this.project.thumbUrlLarge;
     }
   }
 
-  toggleDrawer(){
+  toggleDrawer() {
     console.log("hi");
     this.drawerOpen = !this.drawerOpen;
   }
@@ -87,16 +89,27 @@ export class ProjectBoxComponent {
   // Emit the filter event along with the tag to filter by
   requestFilter(projectName: string): void {
     document.getElementById('site-header')?.classList.add('hidden');
-    document.body.classList.add('no-scroll');
+    this.toggleScroll(false);
     this.filterRequested.emit(projectName);
     this.isFiltered = true;
   }
   // Emit the filter event along with the tag to filter by
   removeFilter(): void {
     document.getElementById('site-header')?.classList.remove('hidden');
-    document.body.classList.remove('no-scroll');
+    this.toggleScroll(true);
     this.drawerOpen = false;
     this.removeFilterRequest.emit();
     this.isFiltered = false;
+  }
+
+  
+  toggleScroll(enable: boolean): void {
+    const method = enable ? 'remove' : 'add';
+    document.documentElement.classList[method]('no-scroll');
+    document.body.classList[method]('no-scroll');
+  }
+
+  openVideoLink(url: string): void {
+    window.open(url, '_blank');
   }
 }
