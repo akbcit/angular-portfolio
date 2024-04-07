@@ -268,8 +268,27 @@ $small-screen-base-font-size: calc(#{$small-screen-box-height} / 20); // Adjust 
                 width: 30px;
                 height: 30px;
 
+                .control-link{
+                    text-decoration: none;
+                    color: white;
+
+                    .control-icon {
+                        transition: transform 0.3s ease;
+                        transform-origin: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
+    
+                        &:hover {
+                            transform: scale(1.4);
+                        }
+                    }
+                }
+
                 .control-icon {
-                    transition: transform 0.9s ease;
+                    transition: transform 0.3s ease;
                     transform-origin: center;
                     display: flex;
                     flex-direction: column;

@@ -1,8 +1,8 @@
 $blog-primary-color: #38d9a9;
 $code-background-color: #000000; // Light gray background for code blocks
 $text-color: #38d9a9; // Dark gray for general text for better readability
-$link-color: #067df7; // A distinct, legible link color
-$code-color:white;
+$link-color: #74b9f2; // A distinct, legible link color
+$code-color: white;
 
 :host {
     min-height: 34rem;
@@ -15,7 +15,7 @@ $code-color:white;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    z-index: 10000;
+    z-index: 1;
     border: 0.5px $blog-primary-color solid;
 }
 
@@ -30,7 +30,8 @@ $code-color:white;
     align-items: start;
     justify-content: flex-start;
     position: relative;
-    z-index: 10000;
+    z-index: 1;
+
     #blog-title {
         font-weight: bold;
         font-size: 3.4rem;
@@ -41,78 +42,123 @@ $code-color:white;
         width: 100%;
         margin-top: 4px;
     }
-    
-    #blog-content{
-        margin-top: 20px;
+
+    #blog-content {
+        margin-top: 0;
         display: flex;
         flex-direction: column;
-        z-index: 10000;
+        z-index: 1;
+        max-width: 100%;
+    }
+
+    .post-nav-link {
+        color: $link-color;
+        user-select: none;
+        cursor: pointer;
+        text-decoration: none;
+
+        &.prev-post {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            gap:5px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                gap:10px;
+                margin-left: 0px;
+            }
+        }
+
+        &.next-post {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            gap:5px;
+            transition: all 0.3s ease;
+            margin-left: 0px;
+            &:hover {
+                gap:10px;
+                margin-left: 5px;
+            }
+        }
 
     }
 
 }
 
 ::ng-deep #blog-content {
-    h1, h2, h3, h4, h5, h6 {
-      color: $blog-primary-color; // Use the primary color for headings
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    p {
-      color: $text-color;
-      line-height: 1.6; // Improve readability with increased line height
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    a {
-      color: $link-color; // Vivid color for links
-      text-decoration: none; // No underline for a cleaner look
-      &:hover {
-        text-decoration: underline; // Underline on hover for clarity
-      }
-    }
-  
-    ul, ol {
-      color: $text-color;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      padding-left: 20px; // Proper indentation for lists
-    }
-  
-    // Style for code blocks
-    pre, code {
-      background-color: $code-background-color;
-      border-radius: 4px;
-      padding: 0.5rem;
-      overflow-x: auto; // Ensures code blocks are scrollable horizontally
-      font-family: 'Courier New', Courier, monospace; // Monospaced font for code
-    }
-  
-    // Style specifically for inline code
-    code {
-      display: inline-block;
-      padding: 2px 4px;
-      margin: 0 2px;
-      font-size: 90%;
-      color: $code-color;
-    }
-  
-    img {
-      max-width: 100%;  
-      height: auto; 
-      margin-top: 1rem;
-      border-radius: 4px;  
-    }
-  
-    blockquote {
-      border-left: 4px solid $blog-primary-color;
-      padding-left: 1rem;
-      margin-left: 0;
-      color: $text-color;
-      font-style: italic;
-    }
-  }
-  
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $blog-primary-color; // Use the primary color for headings
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: $text-color;
+        line-height: 1.6; // Improve readability with increased line height
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        code {
+            margin: 0 auto;
+            width: fit-content;
+        }
+    }
+
+    a {
+        color: $link-color; // Vivid color for links
+        text-decoration: none; // No underline for a cleaner look
+
+        &:hover {
+            text-decoration: underline; // Underline on hover for clarity
+        }
+    }
+
+    ul,
+    ol {
+        color: $text-color;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding-left: 20px; // Proper indentation for lists
+    }
+
+    pre,
+    code {
+        background-color: $code-background-color;
+        border-radius: 4px;
+        padding: 0.5rem;
+        overflow-x: auto;
+        font-family: 'Courier New', Courier, monospace;
+        border: none;
+    }
+
+    code {
+        padding: 2px 1px;
+        margin: 0 2px;
+        font-size: 90%;
+        color: $code-color;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 1rem;
+        border-radius: 4px;
+    }
+
+    blockquote {
+        border-left: 3px solid $blog-primary-color;
+        padding-left: 1rem;
+        margin-left: 0;
+        color: $text-color;
+        font-style: italic;
+    }
+}

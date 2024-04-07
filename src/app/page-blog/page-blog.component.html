@@ -1,9 +1,14 @@
-<app-svg-container></app-svg-container>
 <div id="blog-container">
-    <h1 id="blog-title">Blog</h1>
+    <h1 id="blog-title">{{blogTitle}}</h1>
     <mat-divider class="main-divider"></mat-divider>
     <mat-divider class="main-divider"></mat-divider>
+    <a *ngIf="prevPostId" [routerLink]="['/blog', prevPostId]" class="post-nav-link prev-post">
+        <span class="symbols">&lt;&lt;&lt;</span> Read the previous post
+    </a>
     <article id="blog-content">
-        <markdown [data]="markdownContent"></markdown>
+        <markdown [data]="markdownContent" *ngIf="blogExists"></markdown>
+        <div *ngIf="!blogExists">"Hello and welcome! This blog is currently a work in progress, but exciting content is
+            on the way. I am working hard behind the scenes to bring you something special. Check back soon!"</div>
     </article>
+    <a *ngIf="nextPostId" [routerLink]="['/blog', nextPostId]" class="post-nav-link next-post">Read the next post <span class="symbols">&gt;&gt;&gt;</span> </a>
 </div>

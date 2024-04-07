@@ -2,17 +2,52 @@
     "posts": [
       {
         "id": "1",
-        "date": "2024-04-05",
-        "title": "Secure JWT auth in Node.js and React.js using two token strategy",
-        "summary": "",
-        "link": "url-to-jwt-auth-post.html"
+        "date": "2024-04-01",
+        "title": "Secure JWT auth in Node.js and React.js using a two token strategy Part 1",
+        "summary": "In this guide, we delve into using JSON Web Tokens (JWT) to secure Node.js and React applications. Starting with JWT fundamentals, Part 1 covers environment setup, user registration, and email verification. Each step is clearly outlined, aiming to bolster your app's security while enriching your web development expertise.",
+        "link": "blogs/1"
       },
       {
         "id": "2",
+        "date": "2024-04-02",
+        "title": "Secure JWT auth in Node.js and React.js using a two token strategy Part 2",
+        "summary": "Building on our secure foundation, Part 2 delves into user login functionalities, employing JWTs for authenticating sessions. We introduce a dual-token strategy for enhanced security and convenience, involving Access Tokens for short-term access and Refresh Tokens for prolonged sessions. This part meticulously outlines the process for validating login credentials, generating tokens, and managing sessions, including secure logout practices to ensure users can safely end their sessions.",
+        "link": "blogs/2"
+      },
+      {
+        "id": "3",
+        "date": "2024-04-03",
+        "title": "Secure JWT auth in Node.js and React.js using a two token strategy Part 3",
+        "summary": "In Part 3, we transition our focus to integrating secure authentication within the React frontend, demonstrating how to set up Axios for seamless backend communication and configure Vite for development. We establish a global authentication state using React Context, facilitating a centralized management system for user authentication data accessible across the application. This approach streamlines user login and logout functionalities, ensuring data like user status and tokens are efficiently managed and updated, thus laying the groundwork for a robust, secure, and user-friendly authentication system in React applications.",
+        "link": "blogs/3"
+      },
+      {
+        "id": "4",
+        "date": "2024-04-04",
+        "title": "Secure JWT auth in Node.js and React.js using a two token strategy Part 4",
+        "summary": "Advancing to Part 4, we focus on enriching the frontend with critical authentication components and routing. We introduce the Register and Login components, pivotal for user onboarding and secure access. Through detailed code examples, we explore the creation of forms for user registration and login, underlining the importance of handling user inputs securely. Additionally, we delve into setting up React Router DOM for navigational structure, ensuring a cohesive and navigable user interface that supports secure authentication flows and access management. This phase is instrumental in establishing a solid frontend authentication system, laying the groundwork for a comprehensive and secure user authentication experience.",
+        "link": "blogs/4"
+      },
+      {
+        "id": "5",
         "date": "2024-04-05",
-        "title": "NLP using node-nlp in Node.js",
-        "summary": "",
-        "link": "url-to-nlp-guide-post.html"
+        "title": "Secure JWT auth in Node.js and React.js using a two token strategy Part 5",
+        "summary": "Advancing into Part 5, we focus on the persistent login feature, crucial for maintaining user sessions across browser reloads or restarts. We devised the PersistLogin component, employing React's useEffect to manage authentication states effectively. This component checks for and refreshes access tokens as needed, ensuring users remain logged in with minimal disruption.",
+        "link": "blogs/5"
+      },
+      {
+        "id": "6",
+        "date": "2024-04-06",
+        "title": "Create a simple NLP chatbot using node-nlp",
+        "summary": "Check out my latest post where we build a simple movie recommendation chatbot using node-nlp. This chatbot gets to know your movie preferences through conversation, thanks to named entity and intent recognition. It's like having a friend who suggests exactly what you're in the mood to watch. Dive in to see how you can create your own chatbot that knows movies as well as you do!",
+        "link": "blogs/6"
+      },
+      {
+        "id": "7",
+        "date": "2024-04-07",
+        "title": "Level up in the search game by implementing Vector Embeddings and Semantic Search for your data",
+        "summary": "Dive into our latest guide where we explore enhancing search functionalities through vector embeddings and semantic search. This session is all about creating vector embeddings using the OpenAI Ada model, a step that transforms your data into a format ready for deep understanding. We then shift gears to constructing a vector search mechanism, leveraging cosine similarity to measure how closely data points align with a query. This powerful combination improves search accuracy and introduces a nuanced understanding of user queries. Join me to discover how you can revolutionize your search capabilities, ensuring users find exactly what they're looking for with unprecedented precision.",
+        "link": "blogs/7"
       }
     ]
   }

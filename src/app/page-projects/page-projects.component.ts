@@ -39,6 +39,7 @@ export class PageProjectsComponent {
       roadmap: "",
       descriptionLong: "",
       tags: ["Node.js", "Express.js", "MongoDB", "React"],
+      gitLink:"https://github.com/akbcit/akbcit-project-01-express-billing-system-with-auth"
     },
     {
       thumbUrlSmall: "../../assets/images/project_thumbs/shlokastream_small.png",
