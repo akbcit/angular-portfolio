@@ -13,7 +13,7 @@ import { Project } from '../models/project.model';
   styleUrls: ['./page-projects.component.scss'] // Corrected property name
 })
 export class PageProjectsComponent {
-  tags: Array<string> = ["Node.js", "React", "Angular","Express.js", "Fastify.js", "Hono","AWS Lambda" ,"MongoDB", "PostgreSQL"].filter((v, i, a) => a.indexOf(v) === i);
+  tags: Array<string> = ["Node.js", "React", "Angular","Express.js", "Fastify.js", "Hono","AWS Lambda" ,"MongoDB", "PostgreSQL","PostgreSQL","SQLite"].filter((v, i, a) => a.indexOf(v) === i);
   _tag: string | null = null;
   _name: string | null = null;
   filteredProjects: Array<Project> = [];
@@ -49,6 +49,23 @@ export class PageProjectsComponent {
       videoLink:"https://vimeo.com/931645317",
     },
     {
+      thumbUrlSmall: "../../assets/images/project_thumbs/novella_small.png",
+      thumbUrlMedium: "../../assets/images/project_thumbs/novella_medium.png",
+      thumbUrlLarge: "../../assets/images/project_thumbs/novella_large.png",
+      projectName: "Novella",
+      description: "An online mock jewelry store offering a curated collection of necklaces with secure authentication and PayPal payment options.",
+      features: [
+        "Paypal Payment",
+        "Entity Framework",
+        "Multiple Access Levels",
+        "Easy Interface"
+      ],
+      roadmap: "As the project has been completed and submitted as part of a group assignment for the BCIT SSD program, there isn't an ongoing roadmap.",
+      descriptionLong: "An e-commerce jewelry platform offering detailed browsing and secure PayPal transactions, with features for both customers and admins, including registration, profile management, and product reviews.",
+      tags: ["ASP.Net Core", "SQLite"],
+      gitLink:"https://github.com/wardcarissa93/Novella"
+    },
+    {
       thumbUrlSmall: "../../assets/images/project_thumbs/shlokastream_small.png",
       thumbUrlMedium: "../../assets/images/project_thumbs/shlokastream_medium.png",
       thumbUrlLarge: "../../assets/images/project_thumbs/shlokastream_large.png",
@@ -71,7 +88,7 @@ export class PageProjectsComponent {
       thumbUrlMedium: "../../assets/images/project_thumbs/kiku_medium.png",
       thumbUrlLarge: "../../assets/images/project_thumbs/kiku_large.png",
       projectName: "Kiku",
-      description: "Kiku will be a minimalistic designed to create complex and engaging questionnaires and surveys with ease.",
+      description: "Kiku will be a minimalistic tool to create complex and engaging questionnaires and surveys with ease.",
       features: [ "Intuitive questionnaire builder",
       "Multi-channel chat survey distribution",
       "Advanced reporting and analytics"],
